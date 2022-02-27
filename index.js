@@ -1,6 +1,10 @@
-const express = require('express')
+const express = require('express');
+const moment = require('moment');
 const app = express()
-const port = 3000
+const bodyparser = require('body-parser');
+app.use(bodyparser.urlencoded({extended:false}));
+
+const port = process.env.PORT || 3000;
 app.use(express.json())
 
 
@@ -29,12 +33,6 @@ const books = [
 ]
 
 
-app.get('/', (req, res) => {
-
-const test = "basic route"
-res.send(test)
-
-})
 
 
 app.get('/books/', (req, res) => {
@@ -49,6 +47,7 @@ app.get('/books/:isbn', (req, res) => {
 })
 
 app.post('/books', (req, res) => {
+
     books.push(req.body)
     res.status(200).json(books)
 })
