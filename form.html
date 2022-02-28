@@ -1,0 +1,25 @@
+<form action="http://localhost:3000/books/" method="POST">
+  <fieldset>
+    <h3>post an ISBN</h3>
+    <label>ISBN</label>
+    <input type="text" id="isbn" name="isbn" required>
+    <br><br>
+    <button type ="reset">Reset</button>
+    <button type ="submit">Submit</button>
+    <br><br><br>
+  </fieldset>
+ </form>
+
+
+
+ <form action="http://localhost:3000/books/:isbn" method="GET">
+    <fieldset>
+      <h3>View an isbn</h3>
+      <label>ISBN</label>
+      <input type="text" id="isbn" name="isbn" required>
+      <br><br>
+      <button type ="reset">Reset</button>
+      <button type ="submit">Submit</button>
+      <br><br><br>
+    </fieldset>
+   </form>

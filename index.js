@@ -39,12 +39,19 @@ app.get('/books/', (req, res) => {
     res.json(books)
 })
 
-app.get('/books/:isbn', (req, res) => {
-    const isbn = req.params.isbn
-    const book = books.find(book => book.isbn === isbn)
+// app.get('/books/:isbn', (req, res) => {
+//     const isbn = req.params.isbn
+//     const book = books.find(book => book.isbn === isbn)
 
-    res.json(book)
-})
+//     res.json(book)
+// })
+
+app.get('/books/:isbn', (req, res) => {
+        const isbn = req.query.isbn
+        const book = books.find(book => book.isbn === isbn)
+        console.log(isbn);
+        res.json(book)
+    })
 
 app.post('/books', (req, res) => {
 
